@@ -5,14 +5,14 @@ def jogar():
     print("Bem vindo ao jogo de Adivinhação!")
     print("*********************************")
 
-    #********* Laço com for **********
+    #********* Laço for **********
 
     numero_secreto = random.randrange(1,101)
     total_de_tentativas = 0
     pontos = 1000
 
-    print("Qual nível de dificuldade?")
-    print("(1) fácil (2) Médio (3) Difícil")
+    print("Níveis de dificuldade?")
+    print("(1) fácil    20 tentativas;\n(2) Médio    10 tentativas;\n(3) Difícil  05 tentativas;\n")
 
     nivel = int(input("Defina o nível: "))
     if(nivel == 1):
@@ -25,9 +25,8 @@ def jogar():
     for rodada in range(1, total_de_tentativas + 1):
         print("\nTentativa {} de {}".format(rodada, total_de_tentativas))
 
-        chute_str = input("Digite um número entre 1 e 100: ")
-        print("Você digitou " , chute_str)
-        chute = int(chute_str)
+        chute = int(input("Digite um número entre 1 e 100: "))
+        print("Você digitou " , chute)
 
         if(chute < 1 or chute > 100):
             print("Você deve digitar um número entre 1 e 100!")
@@ -48,7 +47,6 @@ def jogar():
                 print("Você errou! O seu chute foi maior do que o número secreto.")
                 if (rodada == total_de_tentativas):
                     print("O número secreto era {}. Você fez {}".format(numero_secreto, pontos))
-
             elif (chute_menor):
                 print("Você errou! O seu chute foi menor do que o número secreto.")
                 if (rodada == total_de_tentativas):
@@ -64,7 +62,7 @@ if(__name__=="__main__"):
 
 
 
-        #********* Laço com while **********
+        #********* Laço while **********
 
     #numero_secreto = round(random.random() * 100)
     #total_de_tentativas = 3
